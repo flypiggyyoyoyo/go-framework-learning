@@ -12,18 +12,10 @@ project/
 └── geeorm/        # ORM 框架实现
 ```
 
-## 学习计划
-
-GeeWeb框架（3天）：Day 1-3
-
-* Day 1: HTTP基础、Context设计、Trie树路由
-* Day 2: 分组控制、中间件框架、Recovery
-* Day 3: 模板引擎、静态文件、错误处理
-
 ## 项目进度
 
 - [x] 基础 HTTP 服务器
-- [ ] Context 设计
+- [x] Context 设计
 - [ ] 动态路由
 - [ ] ...
 
