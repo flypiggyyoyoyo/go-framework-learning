@@ -9,7 +9,7 @@ import (
 type HandlerFunc func(*Context)
 
 type Engine struct {
-	Router *Router
+	Router *router
 }
 
 func New() *Engine {

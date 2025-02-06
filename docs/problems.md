@@ -36,3 +36,10 @@
   - c是结构体实例，Writer是c中的一个http.ResponseWriter类型的字段
 - [x] encoder.Encode(obj)
   - 调用Encode方法，把go类型的obj转换位json类型并尝试写入encoder中，返回error返回值
+- [x] 动态路由
+  - 路由规则（如 /p/:lang/doc）会被拆分成多个节点，每个节点对应路径中的一部分。每个节点有一个 pattern 属性，这个属性用于记录完整的路由规则。不过，只有路径中最后一个节点的 pattern 属性会被设置为完整的路由规则，其他中间节点的 pattern 属性为空。
+  - 以路由规则 /p/:lang/doc 为例，它会被拆分成三个节点：p、:lang 和 doc。
+    - p 节点：作为路径的第一层节点，它的 pattern 属性为空。
+    - :lang 节点：作为路径的第二层节点，同样 pattern 属性为空。
+    - doc 节点：作为路径的第三层节点，也是最后一层节点，它的 pattern 属性会被设置为 /p/:lang/doc。
+  - 当进行路由匹配时，系统会根据节点的 pattern 属性来判断匹配是否成功。具体规则是：若匹配结束时，当前节点的 pattern 属性不为空，说明找到了对应的路由规则，匹配成功；反之，若 pattern 属性为空，则匹配失败
